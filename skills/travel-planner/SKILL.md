@@ -126,7 +126,47 @@ IF group_size >= 10:
 📍 집결 장소: 성수역 3번 출구 카카오 프렌즈샵 앞
 ```
 
-### Step 5: 결과 구성
+### Step 5: 결과 구성 및 파일 저장
+
+검색 및 검증이 완료되면:
+1. 결과를 마크다운 형식으로 구성
+2. `results/` 디렉토리에 MD 파일로 저장
+3. 파일명 규칙: `{location}-travel-plan-{YYYY-MM}.md`
+
+```
+예시: results/gangneung-travel-plan-2025-05.md
+```
+
+---
+
+## Output File Requirements (필수 출력 파일)
+
+### 파일 저장 규칙
+- **저장 위치**: `results/` 디렉토리
+- **파일 형식**: Markdown (.md)
+- **파일명 패턴**: `{location}-travel-plan-{YYYY-MM}.md`
+- **인코딩**: UTF-8
+
+### 파일 생성 시점
+스킬 실행 완료 후 반드시 Write 도구를 사용하여 결과를 MD 파일로 저장해야 함.
+
+```
+실행 완료 → Write tool → results/{filename}.md
+```
+
+### 파일 구조 예시
+```
+project/
+├── skills/
+│   └── travel-planner/
+│       ├── SKILL.md
+│       ├── EXECUTE.md
+│       └── README.md
+└── results/
+    ├── gangneung-travel-plan-2025-05.md
+    ├── seoul-seongsu-travel-plan-2025-03.md
+    └── busan-haeundae-travel-plan-2025-04.md
+```
 
 ---
 
@@ -295,8 +335,26 @@ IF group_size >= 10:
 
 ---
 
+## Final Output Checklist (최종 출력 체크리스트)
+
+스킬 실행 완료 시 반드시 확인:
+
+```
+□ 모든 장소 4항목 검증 완료
+□ 각 시간대별 5개 이상 대안 옵션 제시
+□ 모든 장소에 신뢰할 수 있는 소스 링크 첨부
+□ 검증 요약 테이블 포함
+□ 주의사항 및 연락처 포함
+□ results/ 디렉토리에 MD 파일 저장 완료 ← 필수!
+```
+
+**MD 파일 미저장 시**: 사용자에게 결과를 보여준 후 반드시 "MD 파일로 저장할까요?" 확인
+
+---
+
 ## Version History
 
 | 버전 | 날짜 | 변경 사항 |
 |------|------|-----------|
 | 1.0.0 | 2025-01 | 초기 버전 - 테마 여행 코스 생성 |
+| 1.1.0 | 2025-01 | MD 파일 자동 저장 기능 추가 |

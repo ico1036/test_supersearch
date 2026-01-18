@@ -288,4 +288,48 @@ IF group_size >= 10:
 □ 대규모 그룹시 분산 모드 적용
 □ 동선 최적화 확인
 □ 검증 요약 테이블 포함
+□ results/ 디렉토리에 MD 파일 저장 완료 ← 필수!
+```
+
+---
+
+## Phase 7: MD 파일 저장 (필수)
+
+스킬 실행 완료 후 반드시 결과를 MD 파일로 저장:
+
+### 저장 규칙
+
+```
+저장 위치: results/
+파일명: {location}-travel-plan-{YYYY-MM}.md
+인코딩: UTF-8
+```
+
+### 파일명 예시
+
+| 입력 | 파일명 |
+|------|--------|
+| 강릉, 2025년 5월 | `gangneung-travel-plan-2025-05.md` |
+| 서울 성수동, 2025년 3월 | `seoul-seongsu-travel-plan-2025-03.md` |
+| 부산 해운대, 2025년 4월 | `busan-haeundae-travel-plan-2025-04.md` |
+
+### 저장 프로세스
+
+```javascript
+// Phase 7: 결과 저장
+Write({
+  file_path: "results/{location}-travel-plan-{YYYY-MM}.md",
+  content: [전체 마크다운 결과]
+})
+```
+
+### 저장 후 확인
+
+```
+✅ 파일 저장 완료: results/{filename}.md
+```
+
+사용자에게 파일 경로를 안내:
+```
+결과가 저장되었습니다: results/{filename}.md
 ```
