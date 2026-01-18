@@ -73,10 +73,13 @@
 ## 파일 구조
 
 ```
-skills/travel-planner/
-├── SKILL.md      # 스킬 정의 및 명세
-├── EXECUTE.md    # 실행 가이드 및 템플릿
-└── README.md     # 사용법 (이 파일)
+super_websearch/
+├── README.md                    # 프로젝트 개요 및 사용법 (이 파일)
+└── skills/
+    └── travel-planner/
+        ├── SKILL.md            # 스킬 정의 및 명세 (필수)
+        └── references/
+            └── EXECUTE.md      # 실행 가이드 및 템플릿
 ```
 
 ---
